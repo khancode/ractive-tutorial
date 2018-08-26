@@ -9,9 +9,13 @@
         <script id="template" type="text/ractive">
           	<h2>Country profile</h2>
 
-          	<p>{{country.name}} is a {{country.climate.temperature}} country with {{country.climate.rainfall}} rainfall and a population of {{country.population}}.</p>
+            {{#country}}
+              	<p>{{name}} is a {{climate.temperature}} country with {{climate.rainfall}} rainfall and a population of {{population}}.</p>
 
-          	<p>The capital city is {{country.capital.name}} (<a href='https://maps.google.co.uk/maps/place/{{country.capital.name}}/@{{country.capital.lat}},{{country.capital.lon}},12z' target='_blank'>see map</a>).</p>
+                {{#capital}}
+              	    <p>The capital city is {{name}} (<a href='https://maps.google.co.uk/maps/place/{{name}}/@{{lat}},{{lon}},12z' target='_blank'>see map</a>).</p>
+                {{/capital}}
+            {{/country}}
         </script>
 
         <script src="./dist/bundle.js"></script>
