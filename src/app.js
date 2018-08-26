@@ -12,3 +12,11 @@ const ractive = new Ractive({
         }
     }
 });
+
+// Update nested property
+const country = ractive.get('country');
+country.climate.rainfall = 'very high';
+ractive.update('country');
+
+// Easier way
+ractive.set('country.climate.rainfall', 'too much');
