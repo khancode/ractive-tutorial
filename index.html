@@ -4,6 +4,12 @@
         <title>Getting Started</title>
     </head>
     <body>
+        <div id="target"></div>
+
+        <script id="template" type="text/ractive">
+            <p>The population of {{country}} is {{ format(population) }}.</p>
+        </script>
+
         <script src="./dist/bundle.js"></script>
     </body>
 </html>
