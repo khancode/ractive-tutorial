@@ -7,7 +7,19 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <p>The population of {{country}} is {{ format(population) }}.</p>
+            <table>
+                <tr>
+                    <th>Price per {{item}}</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+
+                <tr>
+                    <td>{{ format(price) }}</td>
+                    <td>{{quantity}}</td>
+                    <td>{{ format(price * quantity) }}</td> <!-- add the total here -->
+                </tr>
+            </table>
         </script>
 
         <script src="./dist/bundle.js"></script>
