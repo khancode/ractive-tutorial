@@ -7,19 +7,23 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <table>
-                <tr>
-                    <th>Price per {{item}}</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-
-                <tr>
-                    <td>{{ format(price) }}</td>
-                    <td>{{quantity}}</td>
-                    <td>{{ format(price * quantity) }}</td> <!-- add the total here -->
-                </tr>
-            </table>
+            <p>red:</p>
+            <div style='background-color: red;
+                width: {{red*100}}%; height: 1em;'></div>
+            
+            <p>green:</p>
+            <div style='background-color: green;
+                width: {{green*100}}%; height: 1em;'></div>
+            
+            <p>blue:</p>
+            <div style='background-color: blue;
+                width: {{blue*100}}%; height: 1em;'></div>
+            
+            <p><strong>result:</strong></p>
+            <div style='background-color:
+                rgb({{red * 255}}, {{green * 255}}, {{blue * 255}});
+                height: 1em;'>
+            </div>
         </script>
 
         <script src="./dist/bundle.js"></script>

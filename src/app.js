@@ -4,18 +4,10 @@ const ractive = new Ractive({
     el: '#target',
     template: '#template',
     data: {
-        item: 'pint of milk',
-        price: 0.49,
-        quantity: 5,
-        format: num => {
-            if (num < 1) return `${100 * num} p`;
-                return '$' + num.toFixed(2);
-        }
+        red: 0.45,
+        green: 0.61,
+        blue: 0.2
     }
 });
 
-ractive.set({
-    item: 'banana',
-    price: 0.19,
-    quantity: 7
-});
+ractive.set('red', 1);
