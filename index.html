@@ -2,8 +2,29 @@
 <html>
     <head>
         <title>Getting Started</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <div id="target"></div>
+
+        <script id="template" type="text/ractive">
+            <table>
+                <tr>
+                    <th>Superhero name</th>
+                    <th>Real name</th>
+                    <th>Superpower</th>
+                </tr>
+
+                {{#each superheroes}}
+                    <tr>
+                        <td><a href='{{info}}'>{{name}}</a></td>
+                        <td>{{realname}}</td>
+                        <td>{{power}}</td>
+                    </tr>
+                {{/each}}
+            </table>
+        </script>
+
         <script src="./dist/bundle.js"></script>
     </body>
 </html>
