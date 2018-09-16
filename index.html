@@ -7,13 +7,9 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <button
-                on-click="
-                    @global.alert('Activating!'),
-                    console.log('alert was acknowledged')"
-            >
-                Activate!
-            </button>
+            {{number}}
+            <button on-click="@this.subtract('number')">-</button>
+            <button on-click="@this.add('number')">+</button>
         </script>
 
         <script src="./dist/bundle.js"></script>
