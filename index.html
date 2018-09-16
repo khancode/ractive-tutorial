@@ -7,9 +7,27 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            {{number}}
-            <button on-click="@this.subtract('number')">-</button>
-            <button on-click="@this.add('number')">+</button>
+            <table>
+                <tr>
+                    <th>Me</th><th>Sibling</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{#with me}}
+                            {{.cows}}
+                            <button on-click="@context.add('.cows')">+</button><br/>
+                            <button on-click="@context.set('.cows', 0)">I'll miss you, cows</button>
+                        {{/with}}
+                    </td>
+                    <td>
+                        {{#with sibling}}
+                            {{.cows}}
+                            <button on-click="@context.add('.cows')">+</button><br/>
+                            <button on-click="@context.set('.cows', 0)">Hah! You lost your cows"</button>
+                        {{/with}}
+                    </td>
+                </tr>
+            </table>
         </script>
 
         <script src="./dist/bundle.js"></script>

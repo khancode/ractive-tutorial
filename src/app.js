@@ -4,6 +4,7 @@ const ractive = new Ractive({
     el: '#target',
     template: '#template',
     data: {
-        number: 0
+        me: { cows: 0 },
+        sibling: { cows: 0 }
     }
 });
