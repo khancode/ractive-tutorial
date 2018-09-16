@@ -10,13 +10,15 @@
         <script id="template" type="text/ractive">
             <table>
                 <tr>
+                    <th>#</th>
                     <th>Superhero name</th>
                     <th>Real name</th>
                     <th>Superpower</th>
                 </tr>
 
-                {{#each superheroes}}
+                {{#each superheroes: num}}
                     <tr>
+                        <td>{{num + 1}}</td>
                         <td><a href='{{info}}'>{{name}}</a></td>
                         <td>{{realname}}</td>
                         <td>{{power}}</td>
