@@ -2,14 +2,14 @@ import Ractive from 'ractive';
 
 const ractive = new Ractive({
     el: '#target',
-    template: '#template'
+    template: '#template',
+    data: {
+        user: {
+            name: 'Joe'
+        }
+    }
 });
 
-ractive.on({
-    activate: function () {
-        alert( 'Activating!' );
-    },
-    deactivate: function () {
-        alert( 'Deactivating!' );
-    }
+ractive.on('activate', function(ctx, user) {
+    alert(`Activating ${user.name}!`);
 });
