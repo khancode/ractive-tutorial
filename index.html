@@ -7,10 +7,10 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <button on-click="['activate', user]">Activate!</button>
-
-            <!-- which is a bit more convenient than -->
-            <!-- <button on-click="@this.fire('activate', @context, user)">Activate!</button> -->
+            <button on-click="['activate']">Activate!</button>
+            <button on-click="['deactivate']">Deactivate!</button>
+            <button on-click="['toggle']">{{ silenced ? 'Resume!' : 'Silence!' }}</button>
+            <button on-click="['stop']">Stop!</button>
         </script>
 
         <script src="./dist/bundle.js"></script>
