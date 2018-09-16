@@ -2,32 +2,17 @@
 <html>
     <head>
         <title>Getting Started</title>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <table>
-                <tr>
-                    <th>Me</th><th>Sibling</th>
-                </tr>
-                <tr>
-                    <td>
-                        {{#with me}}
-                            {{.cows}}
-                            <button on-click="@context.add('.cows')">+</button><br/>
-                            <button on-click="@context.set('.cows', 0)">I'll miss you, cows</button>
-                        {{/with}}
-                    </td>
-                    <td>
-                        {{#with sibling}}
-                            {{.cows}}
-                            <button on-click="@context.add('.cows')">+</button><br/>
-                            <button on-click="@context.set('.cows', 0)">Hah! You lost your cows"</button>
-                        {{/with}}
-                    </td>
-                </tr>
-            </table>
+            <div id="tracker" on-mousemove="@.set({ x: @event.clientX, y: @event.clientY })" on-click="console.log(`firing at (${@event.clientX}, ${@event.clientY})!`)">
+                ({{x}}, {{y}})
+            </div>
+            
+            <input value="example" on-focus="@node.select()" />
         </script>
 
         <script src="./dist/bundle.js"></script>
