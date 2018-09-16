@@ -5,9 +5,11 @@ const ractive = new Ractive({
     template: '#template'
 });
 
-ractive.on('activate', function ( context ) {
-    // `this` is the ractive instance
-    // `context` is a context object
-    // any additional event arguments would follow `context`, if supplied
-    alert( 'Activating!' );
+ractive.on({
+    activate: function () {
+        alert( 'Activating!' );
+    },
+    deactivate: function () {
+        alert( 'Deactivating!' );
+    }
 });
