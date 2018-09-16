@@ -1,3 +1,6 @@
 import Ractive from 'ractive';
 
-console.log(Ractive);
+const ractive = new Ractive({
+    el: '#target',
+    template: '#template'
+});
