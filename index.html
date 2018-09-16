@@ -2,17 +2,12 @@
 <html>
     <head>
         <title>Getting Started</title>
-        <link rel="stylesheet" href="index.css">
     </head>
     <body>
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <div id="tracker" on-mousemove="@.set({ x: @event.clientX, y: @event.clientY })" on-click="console.log(`firing at (${@event.clientX}, ${@event.clientY})!`)">
-                ({{x}}, {{y}})
-            </div>
-            
-            <input value="example" on-focus="@node.select()" />
+            <button on-click="@.fire('activate')">Activate!</button>
         </script>
 
         <script src="./dist/bundle.js"></script>
