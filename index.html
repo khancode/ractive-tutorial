@@ -10,9 +10,7 @@
             {{#if signedIn}}
                 <!-- message for signed-in users -->
                 <p>Welcome back, {{username}}!</p>
-            {{/if}}
-
-            {{#if notSignedIn}}
+            {{else}}
                 <!-- message for non-signed-in users -->
                 <p>Hi there! Please <a href='#' on-click='@.signIn()'>sign in</a></p>
             {{/if}}
