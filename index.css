@@ -22,6 +22,10 @@ th.sortable:before {
 	margin-right: 0.5em;
 }
 
+th.sortable.sorted:before {
+	color: #eee;
+}
+
 td {
 	border-bottom: 1px solid #ddd;
 }

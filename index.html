@@ -11,12 +11,12 @@
             <table>
                 <tr>
                     <th>#</th>
-                    <th class="sortable" on-click="@.sort('name')">Superhero name</th>
-                    <th class="sortable" on-click="@.sort('realname')">Real name</th>
-                    <th class="sortable" on-click="@.sort('power')">Superpower</th>
+                    <th class="sortable" class-sorted="sortColumn === 'name'" on-click="@.sort('name')">Superhero name</th>
+                    <th class="sortable" class-sorted="sortColumn === 'realname'" on-click="@.sort('realname')">Real name</th>
+                    <th class="sortable" class-sorted="sortColumn === 'power'" on-click="@.sort('power')">Superpower</th>
                 </tr>
 
-                {{#each superheroes: num}}
+                {{#each sort(superheroes): num}}
                     <tr>
                         <td>{{num + 1}}</td>
                         <td><a href='{{info}}'>{{name}}</a></td>

@@ -10,8 +10,23 @@ const xmen = [
 const ractive = new Ractive({
     target: '#target',
     template: '#template',
-    data: { superheroes: xmen },
-    sort: column => {
-        alert(`Sorting by ${column}`);
+    data: {
+        superheroes: xmen,
+        sortColumn: 'name',
+        sort: function(array) {
+            // grab the current sort column
+            const column = this.get('sortColumn'); 
+    
+            // clone the array so as not to modify the underlying data
+            const arr = array.slice();
+    
+            return arr.sort( function ( a, b ) {
+                return a[ sortColumn ] < b[ sortColumn ] ? -1 : 1;
+            });
+        }
+    },
+    sort: function(column) {
+        // update the sort column
+        this.set('sortColumn', column);
     }
 }); // define our superheroes
