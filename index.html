@@ -11,9 +11,9 @@
             <table>
                 <tr>
                     <th>#</th>
-                    <th>Superhero name</th>
-                    <th>Real name</th>
-                    <th>Superpower</th>
+                    <th class="sortable" on-click="@.sort('name')">Superhero name</th>
+                    <th class="sortable" on-click="@.sort('realname')">Real name</th>
+                    <th class="sortable" on-click="@.sort('power')">Superpower</th>
                 </tr>
 
                 {{#each superheroes: num}}

@@ -12,6 +12,16 @@ th {
 	color: #eee;
 }
 
+th.sortable {
+	cursor: pointer;
+}
+
+th.sortable:before {
+	content: '▾';
+	color: #555;
+	margin-right: 0.5em;
+}
+
 td {
 	border-bottom: 1px solid #ddd;
 }

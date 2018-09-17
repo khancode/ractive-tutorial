@@ -10,19 +10,8 @@ const xmen = [
 const ractive = new Ractive({
     target: '#target',
     template: '#template',
-    data: { superheroes: xmen }
+    data: { superheroes: xmen },
+    sort: column => {
+        alert(`Sorting by ${column}`);
+    }
 }); // define our superheroes
-
-const newSuperhero = {
-    name: 'Storm',
-    realname: 'Monroe, Ororo',
-    power: 'Controlling the weather',
-    info: 'http://www.superherodb.com/Storm/10-135/'
-};
-
-// Add an item to a list
-// xmen[xmen.length] = newSuperhero;
-// ractive.update('superheroes');
-
-// Another way to add
-ractive.push('superheroes', newSuperhero);
