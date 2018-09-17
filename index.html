@@ -8,11 +8,16 @@
 
         <script id="template" type="text/ractive">
             <label>
-                Enter your name:
-                <input value="{{name}}">
+                <input type='checkbox' checked='{{checked}}'>
+                {{#if checked}}checked!{{else}}not checked{{/if}}
             </label>
             
-            <p>Hello, {{name}}!</p>
+            <fieldset>
+                <label><input type='radio' name='{{color}}' value='red' checked> red</label>
+                <label><input type='radio' name='{{color}}' value='green'> green</label>
+                <label><input type='radio' name='{{color}}' value='blue'> blue</label>
+                <p>The selected colour is <span style='color: {{color}};'>{{color}}</span>.</p>
+            </fieldset>
         </script>
 
         <script src="./dist/bundle.js"></script>
