@@ -1,25 +1,8 @@
 import Ractive from 'ractive';
 
-const item = "<li class-done='.done'>" +
-    "   <input type='checkbox' checked='{{.done}}'>" +
-    "   <span class='description' on-click=\"edit\">" +
-    "   {{.description}}" +
-    "   {{#if .editing}}" +
-    "     <input class='edit'" +
-    "              value='{{.description}}'" +
-    "              on-blur='@context.toggle( \".editing\" ), false'" +
-    "              on-keydown=\"@.enterExit( @event, @context )\">" +
-    "   {{/if}}" +
-    "   </span>" +
-    "   <button class='button' on-click='@context.splice( \"../\", @index, 1 )'>×</button>" +
-    " </li>";
-
 const ractive = new Ractive({
     target: 'target',
     template: '#template',
-
-    // Add the 'item' partial here
-    partials: { item },
 
     addItem: function ( description ) {
         this.push( 'items', {

@@ -17,6 +17,23 @@
                     {{>item}}
                 {{/each}}
             </ul>
+
+            {{#partial item}}
+                <li class-done='.done'>
+                    <input type='checkbox' checked='{{.done}}'>
+                    <span class='description' on-click="edit">
+                    {{.description}}
+
+                    {{#if .editing}}
+                        <input class='edit'
+                        value='{{.description}}'
+                        on-blur='@context.toggle( ".editing" ), false'
+                        on-keydown="@.enterExit( @event, @context )">
+                    {{/if}}
+                    </span>
+                    <button class='button' on-click='@context.splice( "../", @index, 1 )'>×</button>
+                </li>
+            {{/partial}}
         </script>
 
         <script src="./dist/bundle.js"></script>
