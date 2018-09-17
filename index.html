@@ -2,8 +2,23 @@
 <html>
     <head>
         <title>Getting Started</title>
+        <link rel="stylesheet" type="text/css" href="index.css"> 
     </head>
     <body>
+        <div id="target"></div>
+
+        <script id="template" type="text/ractive">
+            <h2>To-do list</h2>
+        
+            <input on-change="newTodo" placeholder='What needs to be done?'>
+            
+            <ul class='todos'>
+                {{#each items: i}}
+                    {{>item}}
+                {{/each}}
+            </ul>
+        </script>
+
         <script src="./dist/bundle.js"></script>
     </body>
 </html>

@@ -1,0 +1,77 @@
+html {
+	font-family: sans-serif;
+}
+
+input[placeholder] {
+	width: 100%;
+	max-width: 20em;
+	padding: 0.4em;
+	font-size: inherit;
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+ul {
+	padding: 0;
+	border-top: 1px solid #f0f0f0;
+	max-width: 20em;
+	list-style: none;
+}
+
+li {
+	position: relative;
+	padding: 0.5em 3em 0.5em 2em;
+	border-bottom: 1px solid #eee;
+	margin: 0;
+	min-height: 1em;
+}
+
+li:hover {
+	background-color: #f9f9f9;
+}
+
+li:hover > button {
+	opacity: 1;
+}
+
+li.done > span {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+li > input[type=checkbox] {
+	position: absolute;
+	left: 0.5em;
+	top: 0.7em;
+}
+
+li > button {
+	border: none;
+	background-color: red;
+	color: #fff;
+	position: absolute;
+	right: 0.5em;
+	top: 0.7em;
+	opacity: 0.4;
+}
+
+li > span {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+li > span > input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: inherit;
+	font-family: inherit;
+}
