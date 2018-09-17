@@ -2,38 +2,28 @@
 <html>
     <head>
         <title>Getting Started</title>
-        <link rel="stylesheet" type="text/css" href="index.css"> 
     </head>
     <body>
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <h2>To-do list</h2>
-        
-            <input on-change="newTodo" placeholder='What needs to be done?'>
-            
-            <ul class='todos'>
-                {{#each items: i}}
-                    {{>item}}
-                {{/each}}
-            </ul>
+            <h2>Lots of Yachts</h2>
 
-            {{#partial item}}
-                <li class-done='.done'>
-                    <input type='checkbox' checked='{{.done}}'>
-                    <span class='description' on-click="edit">
-                    {{.description}}
+            {{#each yachts}}
+                <div>
+                    {{>name}} - owner {{>name .owner}}
+                </div>
+            {{/each}}
+        </script>
 
-                    {{#if .editing}}
-                        <input class='edit'
-                        value='{{.description}}'
-                        on-blur='@context.toggle( ".editing" ), false'
-                        on-keydown="@.enterExit( @event, @context )">
-                    {{/if}}
-                    </span>
-                    <button class='button' on-click='@context.splice( "../", @index, 1 )'>×</button>
-                </li>
-            {{/partial}}
+        <script id="name" type="text/ractive">
+            {{#if .type === 'business'}}
+                {{.name}}{{.classifier ? `, ${.classifier}` : ''}}
+            {{elseif .type === 'yacht'}}
+                {{name}}
+            {{else}}
+                {{.familyName}}, {{.givenName}}{{.suffix ? ` ${.suffix}` : ''}}
+            {{/if}}
         </script>
 
         <script src="./dist/bundle.js"></script>
