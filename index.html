@@ -4,6 +4,17 @@
         <title>Getting Started</title>
     </head>
     <body>
+        <div id="target"></div>
+
+        <script id="template" type="text/ractive">
+            <label>
+                Enter your name:
+                <input value="{{name}}">
+            </label>
+            
+            <p>Hello, {{name}}!</p>
+        </script>
+
         <script src="./dist/bundle.js"></script>
     </body>
 </html>
