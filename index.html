@@ -7,17 +7,13 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <label>
-                <input type='checkbox' checked='{{checked}}'>
-                {{#if checked}}checked!{{else}}not checked{{/if}}
-            </label>
+            <select value='{{color}}'>
+                {{#each colors}}
+                    <option>{{this}}</option>
+                {{/each}}
+            </select>
             
-            <fieldset>
-                <label><input type='radio' name='{{color}}' value='red' checked> red</label>
-                <label><input type='radio' name='{{color}}' value='green'> green</label>
-                <label><input type='radio' name='{{color}}' value='blue'> blue</label>
-                <p>The selected colour is <span style='color: {{color}};'>{{color}}</span>.</p>
-            </fieldset>
+            <p>The selected colour is <span style='color: {{color}};'>{{color}}</span>.</p>
         </script>
 
         <script src="./dist/bundle.js"></script>
