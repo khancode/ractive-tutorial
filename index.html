@@ -7,13 +7,24 @@
         <div id="target"></div>
 
         <script id="template" type="text/ractive">
-            <select value='{{color}}'>
+            <p>Use <kbd>Shift</kbd> and <kbd>{{meta}}</kbd> to select multiple options:</p>
+
+            <select value='{{selectedColors}}' multiple>
                 {{#each colors}}
                     <option>{{this}}</option>
                 {{/each}}
             </select>
-            
-            <p>The selected colour is <span style='color: {{color}};'>{{color}}</span>.</p>
+
+            {{#if selectedColors.length}}
+                <p>The selected colours are:</p>
+                <ul>
+            {{#each selectedColors}}
+                <li style='background-color: {{this}};'>{{this}}</li>
+                {{/each}}
+                </ul>
+            {{else}}
+                <p>No colours are selected.</p>
+            {{/if}}
         </script>
 
         <script src="./dist/bundle.js"></script>

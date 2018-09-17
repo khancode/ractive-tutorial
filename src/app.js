@@ -4,7 +4,9 @@ const ractive = new Ractive({
     target: '#target',
     template: '#template',
     data: {
-        colors: [ 'red', 'green', 'blue' ],
-        color: 'green'
+		colors: [ 'red', 'green', 'blue', 'purple' ],
+		meta: /Mac/.test(navigator.appVersion) ? 'Cmd' : 'Ctrl'
 	}
 });
+
+ractive.set( 'selectedColors', [ 'green', 'purple' ]);
